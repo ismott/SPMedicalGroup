@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpMadicalGrup", "SpMadicalGrup\SpMadicalGrup.csproj", "{652035FD-F256-4A71-BDB9-196230EC4EBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{652035FD-F256-4A71-BDB9-196230EC4EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652035FD-F256-4A71-BDB9-196230EC4EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652035FD-F256-4A71-BDB9-196230EC4EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652035FD-F256-4A71-BDB9-196230EC4EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81ADB53B-A6C3-491D-8CE8-4ECDC4601704}
+	EndGlobalSection
+EndGlobal
