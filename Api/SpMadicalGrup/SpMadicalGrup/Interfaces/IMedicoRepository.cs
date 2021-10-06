@@ -9,5 +9,6 @@ namespace SpMadicalGrup.Interfaces
     interface IMedicoRepository
     {
         List<Medico> ListarTodos();
+        void Cadastrar(Medico NovoMedico);
     }
 }

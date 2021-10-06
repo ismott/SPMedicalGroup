@@ -12,9 +12,28 @@ namespace SpMadicalGrup.Repositores
     {
         SpMadicalContext ctx = new SpMadicalContext();
 
-        public void AprovarRecusar(int IdPresenca, string Status)
+        public void AprovarRecusar(int IdConsulta, string Status)
         {
-            throw new NotImplementedException();
+            Consultum ConsultaBuscada = ctx.Consulta.FirstOrDefault(c => c.ConsultaId == IdConsulta);
+
+            switch (Status)
+            {
+                case "1":
+                    ConsultaBuscada.SituacaoId = 1;
+                    break;
+                case "2":
+                    ConsultaBuscada.SituacaoId = 2;
+                    break;
+                case "3":
+                    ConsultaBuscada.SituacaoId = 3;
+                    break;
+                default:
+                    ConsultaBuscada.SituacaoId = ConsultaBuscada.SituacaoId;
+                    break;
+            }
+
+            ctx.Consulta.Update(ConsultaBuscada);
+            ctx.SaveChanges();
         }
 
         public void Atualizar(int Id, Consultum ConsultumAtualizado)

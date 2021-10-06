@@ -28,7 +28,7 @@ Go
 Select * From TipoMedico;
 Go
 
-Select Paciente.Nome [Nome do paciente], Medico.Nome [Nome do médico], DataConsulta [Data da consulta], NomeSituacao [situação] 
+Select Paciente.Nome [Nome do paciente], Medico.Nome [Nome do mï¿½dico], DataConsulta [Data da consulta], NomeSituacao [situaï¿½ï¿½o] 
 From Paciente Inner Join Consulta On Paciente.PacienteID = Consulta.PacienteID 
 Inner Join Medico On Medico.MedicoID = Consulta.MedicoID 
 Inner Join Situacao On Situacao.SituacaoID = Consulta.SituacaoID;
@@ -54,5 +54,5 @@ As Begin
 	Select Paciente.Nome, Datediff(Year, Paciente.DataNacimento, Getdate()) As Idade From Paciente Where Paciente.Nome = @Idade 
 End;
 
-Exec IdadePac 'João';
+Exec IdadePac 'Joï¿½o';
 Go
