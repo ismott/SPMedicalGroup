@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SpMadicalGrup.Domains;
 using SpMadicalGrup.Interfaces;
@@ -24,6 +25,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Post(Consultum NovaConsulta)
         {
             try
@@ -39,6 +41,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult GetAll()
         {
             try
@@ -53,7 +56,9 @@ namespace SpMadicalGrup.Controllers
             }
         }
 
+        
         [HttpGet("minhas")]
+        [Authorize]
         public IActionResult ListarMinhas()
         {
             try
@@ -73,6 +78,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize (Roles = "1")]
         public IActionResult Delete(int id)
         {
             try
@@ -90,6 +96,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public IActionResult GetById(int id)
         {
             try
@@ -103,13 +110,15 @@ namespace SpMadicalGrup.Controllers
             }
         }
 
+
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Consultum tipoEventoAtualizado)
+        [Authorize (Roles = "2")]
+        public IActionResult Put(int id, string Descricao)
         {
             try
             {
                 // Faz a chamada para o método
-                _ConsultaRepository.Atualizar(id, tipoEventoAtualizado);
+                _ConsultaRepository.Atualizar(id, Descricao);
 
                 // Retorna um status code
                 return StatusCode(204);
@@ -120,6 +129,7 @@ namespace SpMadicalGrup.Controllers
             }
         }
 
+        [Authorize (Roles = "1, 2")]
         [HttpPatch("aprovar/{idPresenca}")]
         public IActionResult AprovarRecusar(int idPresenca, Consultum status)
         {

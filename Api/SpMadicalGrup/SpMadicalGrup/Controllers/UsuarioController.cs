@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SpMadicalGrup.Domains;
 using SpMadicalGrup.Interfaces;
@@ -13,6 +14,7 @@ namespace SpMadicalGrup.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize (Roles = "1")]
     public class UsuarioController : ControllerBase
     {
         private IUsuarioRepository _UsuarioRepository { get; set; }
@@ -23,11 +25,12 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Usuario NovaConsulta)
+        [Authorize(Roles = "1")]
+        public IActionResult Post(Usuario NovaUsuario)
         {
             try
             {
-                _UsuarioRepository.Cadastrar(NovaConsulta);
+                _UsuarioRepository.Cadastrar(NovaUsuario);
 
                 return StatusCode(201);
             }
@@ -38,6 +41,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "1")]
         public IActionResult GetAll()
         {
             try
@@ -53,6 +57,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "1")]
         public IActionResult Delete(int id)
         {
             try
@@ -70,6 +75,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "1")]
         public IActionResult GetById(int id)
         {
             try
@@ -84,12 +90,13 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Usuario tipoEventoAtualizado)
+        [Authorize(Roles = "1")]
+        public IActionResult Put(int id, Usuario UsuarioAtualizado)
         {
             try
             {
                 // Faz a chamada para o método
-                _UsuarioRepository.Atualizar(id, tipoEventoAtualizado);
+                _UsuarioRepository.Atualizar(id, UsuarioAtualizado);
 
                 // Retorna um status code
                 return StatusCode(204);

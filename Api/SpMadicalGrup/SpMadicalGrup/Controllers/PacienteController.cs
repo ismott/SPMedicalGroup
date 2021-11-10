@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SpMadicalGrup.Domains;
 using SpMadicalGrup.Interfaces;
@@ -22,6 +23,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "1")]
         public IActionResult Post(Paciente NovaConsulta)
         {
             try
@@ -37,6 +39,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "1")]
         public IActionResult GetAll()
         {
             try

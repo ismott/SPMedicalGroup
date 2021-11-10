@@ -36,15 +36,13 @@ namespace SpMadicalGrup.Repositores
             ctx.SaveChanges();
         }
 
-        public void Atualizar(int Id, Consultum ConsultumAtualizado)
+        public void Atualizar(int Id, string Descricao)
         {
             Consultum ConsultaBuscado = ctx.Consulta.Find(Id);
 
-            if (ConsultumAtualizado.MedicoId != null || ConsultumAtualizado.PacienteId != null || ConsultumAtualizado.Descricao != null)
+            if (ConsultaBuscado.Descricao != null || ConsultaBuscado.Descricao == null)
             {
-                ConsultaBuscado.MedicoId = ConsultumAtualizado.MedicoId;
-                ConsultaBuscado.PacienteId = ConsultumAtualizado.PacienteId;
-                ConsultaBuscado.Descricao = ConsultumAtualizado.Descricao;
+                ConsultaBuscado.Descricao = Descricao;
 
                 ctx.Consulta.Update(ConsultaBuscado);
                 ctx.SaveChanges();

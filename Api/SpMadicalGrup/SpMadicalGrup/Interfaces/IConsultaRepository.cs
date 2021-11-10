@@ -16,7 +16,7 @@ namespace SpMadicalGrup.Interfaces
 
         Consultum BuscaPorId(int Id);
 
-        void Atualizar(int Id, Consultum ConsultumAtualizado);
+        void Atualizar(int Id, string Descricao);
 
         List<Consultum> ListarMinhas(int IdUsuario);
 
