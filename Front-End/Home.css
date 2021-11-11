@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.conteiner{
+    width: 98vw;
+    margin: 0;
+}
+
+.contHeder{
+    display: flex;
+    justify-content: space-around;
+}
+
+.LinkHeder_cont{
+    width: 23%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.LinkHeder{
+    font-family: open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+}
+
+.Baner{
+    background-image: url(../Front-End/assets/Group\ 1.png);
+    width: 100%;
+    height: 807px;
+    background-repeat: round;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Baner h1{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 88px;
+    color: white;
+}
+
+.ContH1Baner{
+    display: flex;
+}
+  
