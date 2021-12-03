@@ -52,4 +52,30 @@
 .ContH1Baner{
     display: flex;
 }
-  
+
+.Baner span{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 37px;
+    color: white;
+    border-top: 2px solid white;
+    margin-top: 10px;
+}
+
+.VejaConsultas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ImgBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BtnP{
+    display: flex;
+    flex-direction: column;
+}
