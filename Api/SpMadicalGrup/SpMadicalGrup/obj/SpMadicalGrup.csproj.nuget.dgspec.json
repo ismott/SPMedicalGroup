@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Biblioteca do Sistema\\Israel\\Documentos\\SENAI 1\\SPMedicalGrup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj": {}
+    "C:\\Users\\48423428893\\Documents\\SPMedicalGroup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj": {}
   },
   "projects": {
-    "F:\\Biblioteca do Sistema\\Israel\\Documentos\\SENAI 1\\SPMedicalGrup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj": {
+    "C:\\Users\\48423428893\\Documents\\SPMedicalGroup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Biblioteca do Sistema\\Israel\\Documentos\\SENAI 1\\SPMedicalGrup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj",
+        "projectUniqueName": "C:\\Users\\48423428893\\Documents\\SPMedicalGroup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj",
         "projectName": "SpMadicalGrup",
-        "projectPath": "F:\\Biblioteca do Sistema\\Israel\\Documentos\\SENAI 1\\SPMedicalGrup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj",
-        "packagesPath": "C:\\Users\\israe\\.nuget\\packages\\",
-        "outputPath": "F:\\Biblioteca do Sistema\\Israel\\Documentos\\SENAI 1\\SPMedicalGrup\\Api\\SpMadicalGrup\\SpMadicalGrup\\obj\\",
+        "projectPath": "C:\\Users\\48423428893\\Documents\\SPMedicalGroup\\Api\\SpMadicalGrup\\SpMadicalGrup\\SpMadicalGrup.csproj",
+        "packagesPath": "C:\\Users\\48423428893\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48423428893\\Documents\\SPMedicalGroup\\Api\\SpMadicalGrup\\SpMadicalGrup\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\israe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\48423428893\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
