@@ -20,7 +20,7 @@ export default function Stack() {
       />
 
       <AuthStack.Navigator
-        initialRouteName="Consultas"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}>

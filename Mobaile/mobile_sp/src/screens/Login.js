@@ -15,22 +15,24 @@ export default class login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Email: '',
-            Senha: '',
+            Email: 'ligia@gmail.com',
+            Senha: '21314',
         };
     }
 
     RealizarLogin = async () => {
         const resposta = await api.post('/Login', {
-            Email: this.state.Email,
-            Senha: this.state.Senha
+            email: this.state.Email,
+            senha: this.state.Senha
         })
-        await AsyncStorage.setItem('userToken', resposta.data.Token)
+
+        const Token = resposta.data.token;
+        await AsyncStorage.setItem('userToken', Token)
 
         if (resposta.status == 200) {
             this.props.navigation.navigate('Consultas');
         }
-        console.warn(resposta.data.Token)
+        console.warn(Token)
     }
 
     render() {
@@ -52,7 +54,7 @@ export default class login extends Component {
                     onChangeText={Senha => this.setState({ Senha })}
                 ></TextInput>
 
-                <TouchableOpacity style={styles.button} onPress={this.realizarLogin}>
+                <TouchableOpacity style={styles.button} onPress={this.RealizarLogin}>
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
             </View>

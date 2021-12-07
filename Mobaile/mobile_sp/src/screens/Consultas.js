@@ -7,6 +7,7 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
+    FlatList,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../services/api';
@@ -55,9 +56,30 @@ export default class Consultas extends Component {
                     </Text>
                     <View style={styles.linha}></View>
                 </View>
+                <FlatList
+                    contentContainerStyle={styles.lista}
+                    data={this.state.Lista}
+                    keyExtractor={item => item.ConsultaId}
+                    renderItem={this.renderItem}
+                />
             </View>
         )
+
     }
+
+    renderItem = ({ item }) => (
+        <View style={styles.container_lista}>
+            <View style={styles.container_nomes}>
+                <Text style={styles.NomeMedico}>{(item.Medico.nome)}</Text>
+                <Text style={styles.NomePaciente}>{(item.Paciente.nome)}</Text>
+                <Text style={styles.Situacao}>{(item.Situacao.NomeSituacao)}</Text>
+                <Text style={styles.Descricao}>{item.DataConsulta}</Text>
+            </View>
+            <Text style={styles.descricao}>
+                {item.decricao}
+            </Text>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

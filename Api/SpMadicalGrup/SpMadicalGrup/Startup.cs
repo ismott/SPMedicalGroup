@@ -53,7 +53,7 @@ namespace SpMadicalGrup
                       ValidateIssuer = true,
                       ValidateAudience = true,
                       ValidateLifetime = true,
-                      IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Sp-Chave")),
+                      IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Sp-Chave-dsafafsafdasd")),
                       ClockSkew = TimeSpan.FromMinutes(30),
                       ValidIssuer = "Sp.webAPI",
                       ValidAudience = "Sp.webAPI"

@@ -25,7 +25,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public IActionResult Post(Consultum NovaConsulta)
         {
             try
@@ -41,7 +41,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public IActionResult GetAll()
         {
             try
@@ -58,7 +58,7 @@ namespace SpMadicalGrup.Controllers
 
         
         [HttpGet("minhas")]
-        [Authorize]
+        //[Authorize]
         public IActionResult ListarMinhas()
         {
             try
@@ -78,7 +78,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize (Roles = "1")]
+        //[Authorize (Roles = "1")]
         public IActionResult Delete(int id)
         {
             try
@@ -96,7 +96,7 @@ namespace SpMadicalGrup.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize]
+        //[Authorize]
         public IActionResult GetById(int id)
         {
             try
@@ -112,7 +112,7 @@ namespace SpMadicalGrup.Controllers
 
 
         [HttpPut("{id}")]
-        [Authorize (Roles = "2")]
+        //[Authorize (Roles = "2")]
         public IActionResult Put(int id, string Descricao)
         {
             try
@@ -129,8 +129,8 @@ namespace SpMadicalGrup.Controllers
             }
         }
 
-        [Authorize (Roles = "1, 2")]
         [HttpPatch("aprovar/{idPresenca}")]
+        //[Authorize (Roles = "1, 2")]
         public IActionResult AprovarRecusar(int idPresenca, Consultum status)
         {
             try

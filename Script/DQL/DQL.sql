@@ -1,4 +1,4 @@
-Use SPMedicalGrup;
+Use SPMedicalGroup_israel;
 Go
 
 Select * From Consulta;
