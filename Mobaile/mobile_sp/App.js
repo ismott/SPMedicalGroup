@@ -24,6 +24,7 @@ export default function Stack() {
         screenOptions={{
           headerShown: false,
         }}>
+          
         <AuthStack.Screen name="Login" component={Login} />
         <AuthStack.Screen name="Consultas" component={Consultas} />
       </AuthStack.Navigator>

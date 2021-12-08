@@ -58,8 +58,8 @@ export default class Consultas extends Component {
                 </View>
                 <FlatList
                     contentContainerStyle={styles.lista}
-                    data={this.state.Lista}
-                    keyExtractor={item => item.ConsultaId}
+                    data={this.state.Consulta}
+                    keyExtractor={item => item.consultaId}
                     renderItem={this.renderItem}
                 />
             </View>
@@ -70,14 +70,16 @@ export default class Consultas extends Component {
     renderItem = ({ item }) => (
         <View style={styles.container_lista}>
             <View style={styles.container_nomes}>
-                <Text style={styles.NomeMedico}>{(item.Medico.nome)}</Text>
-                <Text style={styles.NomePaciente}>{(item.Paciente.nome)}</Text>
-                <Text style={styles.Situacao}>{(item.Situacao.NomeSituacao)}</Text>
-                <Text style={styles.Descricao}>{item.DataConsulta}</Text>
+                <Text style={styles.NomeMedico}>Medico: {(item.medico.nome)}</Text>
+                <Text style={styles.NomePaciente}>Paciente: {(item.paciente.nome)}</Text>
+                <Text style={styles.Situacao}>{(item.situacao.nomeSituacao)}</Text>
             </View>
-            <Text style={styles.descricao}>
-                {item.decricao}
-            </Text>
+            <View>
+                <Text style={styles.descricao}>
+                    {item.decricao}
+                </Text>
+            </View>
+            <Text style={styles.dataConsulta}>{item.dataConsulta}</Text>
         </View>
     )
 }
@@ -109,4 +111,41 @@ const styles = StyleSheet.create({
         backgroundColor: '#0FDD23',
         height: 2,
     },
+
+    container_lista: {
+        // height: '40%',
+        width: 300,
+        backgroundColor: '#f1f1f1',
+        borderRadius: 10,
+        paddingLeft: 5,
+        marginTop: 50,
+    },
+
+    NomeMedico: {
+        fontSize: 15,
+        fontFamily: 'Roboto',
+        color: '#000',
+        fontWeight: '400',
+    },
+
+    NomePaciente: {
+        fontSize: 15,
+        fontFamily: 'Roboto',
+        color: '#000',
+        fontWeight: '400',
+    },
+
+    Situacao: {
+        fontSize: 15,
+        fontFamily: 'Roboto',
+        color: '#000',
+        fontWeight: '400',
+    },
+
+    dataConsulta: {
+        fontSize: 15,
+        fontFamily: 'Roboto',
+        color: '#000',
+        fontWeight: '400',
+    }
 })
