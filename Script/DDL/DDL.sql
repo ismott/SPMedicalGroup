@@ -1,7 +1,7 @@
-Create Database SPMedicalGrup;
+Create Database SPMedicalGroup_israel;
 Go
 
-Use SPMedicalGrup;
+Use SPMedicalGroup_israel;
 Go
 
 Create Table TipoUsuario(

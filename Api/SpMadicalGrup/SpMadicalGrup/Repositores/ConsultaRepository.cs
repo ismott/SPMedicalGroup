@@ -1,4 +1,5 @@
-﻿using SpMadicalGrup.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SpMadicalGrup.Contexts;
 using SpMadicalGrup.Domains;
 using SpMadicalGrup.Interfaces;
 using System;
@@ -74,7 +75,7 @@ namespace SpMadicalGrup.Repositores
 
         public List<Consultum> ListarTodos()
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta.Include(x => x.Paciente).Include(x => x.Medico).Include(x => x.Situacao).ToList();
         }
     }
 }
