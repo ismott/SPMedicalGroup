@@ -69,7 +69,7 @@ namespace SpMadicalGrup.Repositores
 
         public List<Consultum> ListarMinhas(int IdUsuario)
         {
-            return ctx.Consulta.Where(c => c.SituacaoId == IdUsuario).ToList();
+            return ctx.Consulta.Where(c => c.Paciente.UsuarioId == IdUsuario).ToList();
         }
 
         public List<Consultum> ListarTodos()
