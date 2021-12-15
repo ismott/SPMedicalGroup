@@ -49,8 +49,8 @@ export default class ListarMinhas extends Component {
                                     this.state.ListarConsulta.map((Consulta) => {
                                         return (
                                             <tr key={Consulta.consultaId}>
-                                                <td>{Consulta.pacienteId}</td>
-                                                <td>{Consulta.medicoId}</td>
+                                                <td>{Consulta.paciente.nome}</td>
+                                                <td>{Consulta.medico.nome}</td>
                                                 <td>{Consulta.dataConsulta}</td>
                                                 <td>{Consulta.descricao}</td>
                                             </tr>

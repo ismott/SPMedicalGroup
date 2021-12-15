@@ -66,6 +66,7 @@ namespace SpMadicalGrup.Repositores
             Consultum ConsultaDeletada = BuscaPorId(Id);
 
             ctx.Consulta.Remove(ConsultaDeletada);
+            ctx.SaveChanges();
         }
 
         public List<Consultum> ListarMinhas(int IdUsuario)
@@ -75,7 +76,11 @@ namespace SpMadicalGrup.Repositores
 
         public List<Consultum> ListarTodos()
         {
-            return ctx.Consulta.Include(x => x.Paciente).Include(x => x.Medico).Include(x => x.Situacao).ToList();
+            return ctx.Consulta
+                               .Include(x => x.Paciente)
+                               .Include(x => x.Medico)
+                               .Include(x => x.Situacao)
+                               .ToList();
         }
     }
 }

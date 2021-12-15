@@ -45,11 +45,8 @@ namespace SpMadicalGrup.Controllers
                     new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuarioId.ToString()),
                 };
 
-<<<<<<< HEAD
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMadicalGrup-Chave"));
-=======
+                //var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMadicalGrup-Chave"));
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Sp-Chave-dsafafsafdasd"));
->>>>>>> d8e578a65c754a9878e6ad5956b301e3e11d9fb2
 
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

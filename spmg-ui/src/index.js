@@ -6,6 +6,7 @@ import './index.css';
 
 import Home from './Pages/Home/App';
 import ListarMinhas from './Pages/ListarMinhas/ListarMinha';
+import CadastroConsulta from './Pages/CadastroConsulta/CadastroConsulta';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -15,6 +16,7 @@ const routing = (
       <Routes>
         <Route exact path="/" component={Home} />
         <Route path="/listarminhas" component={ListarMinhas} />
+        <Route path="/CadastroConsulta" component={CadastroConsulta} />
       </Routes>
     </div>
   </Router>
