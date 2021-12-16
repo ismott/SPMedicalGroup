@@ -43,6 +43,7 @@ namespace SpMadicalGrup.Controllers
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.UsuarioId.ToString()),
                     new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuarioId.ToString()),
+                    new Claim( "role", usuarioBuscado.TipoUsuarioId.ToString() )
                 };
 
                 //var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMadicalGrup-Chave"));

@@ -37,13 +37,13 @@ namespace SpMadicalGrup.Repositores
             ctx.SaveChanges();
         }
 
-        public void Atualizar(int Id, string Descricao)
+        public void Atualizar(int Id, Consultum ConsultumAtualizado)
         {
-            Consultum ConsultaBuscado = ctx.Consulta.Find(Id);
+            Consultum ConsultaBuscado = BuscaPorId(Id);
 
-            if (ConsultaBuscado.Descricao != null || ConsultaBuscado.Descricao == null)
+            if (ConsultaBuscado.Descricao != null)
             {
-                ConsultaBuscado.Descricao = Descricao;
+                ConsultaBuscado.Descricao = ConsultumAtualizado.Descricao;
 
                 ctx.Consulta.Update(ConsultaBuscado);
                 ctx.SaveChanges();
@@ -71,7 +71,70 @@ namespace SpMadicalGrup.Repositores
 
         public List<Consultum> ListarMinhas(int IdUsuario)
         {
-            return ctx.Consulta.Where(c => c.Paciente.UsuarioId == IdUsuario).ToList();
+            Paciente PacienteBuscado = ctx.Pacientes.FirstOrDefault(x => x.UsuarioId == IdUsuario);
+
+            Medico MedicoBuscado = ctx.Medicos.FirstOrDefault(x => x.UsuarioId == IdUsuario);
+
+            if (PacienteBuscado != null)
+            {
+                return ctx.Consulta.Where(c => c.PacienteId == PacienteBuscado.PacienteId)
+                               .Include(x => x.Paciente)
+                               .Include(x => x.Medico)
+                               .Include(x => x.Situacao)
+                               .Select(x => new Consultum()
+                               {
+                                   ConsultaId = x.ConsultaId,
+                                   Medico = new Medico()
+                                   {
+                                       Nome = x.Medico.Nome,
+                                       Crm = x.Medico.Crm
+                                   },
+                                   Paciente = new Paciente()
+                                   {
+                                       Nome = x.Paciente.Nome,
+                                       DataNacimento = x.Paciente.DataNacimento,
+                                       Rg = x.Paciente.Rg
+                                   },
+                                   Situacao = new Situacao()
+                                   {
+                                       NomeSituacao = x.Situacao.NomeSituacao
+                                   },
+                                   Descricao = x.Descricao,
+                                   DataConsulta = x.DataConsulta
+                               })
+                               .ToList(); ;
+            }
+            if (MedicoBuscado != null)
+            {
+                return ctx.Consulta.Where(c => c.MedicoId == MedicoBuscado.MedicoId)
+                               .Include(x => x.Paciente)
+                               .Include(x => x.Medico)
+                               .Include(x => x.Situacao)
+                               .Select(x => new Consultum()
+                               {
+                                   ConsultaId = x.ConsultaId,
+                                   Medico = new Medico()
+                                   {
+                                       Nome = x.Medico.Nome,
+                                       Crm = x.Medico.Crm
+                                   },
+                                   Paciente = new Paciente()
+                                   {
+                                       Nome = x.Paciente.Nome,
+                                       DataNacimento = x.Paciente.DataNacimento,
+                                       Rg = x.Paciente.Rg
+                                   },
+                                   Situacao = new Situacao()
+                                   {
+                                       NomeSituacao = x.Situacao.NomeSituacao
+                                   },
+                                   Descricao = x.Descricao,
+                                   DataConsulta = x.DataConsulta
+                               })
+                               .ToList(); ;
+            }
+
+            return null;
         }
 
         public List<Consultum> ListarTodos()
@@ -80,6 +143,27 @@ namespace SpMadicalGrup.Repositores
                                .Include(x => x.Paciente)
                                .Include(x => x.Medico)
                                .Include(x => x.Situacao)
+                               .Select(x => new Consultum ()
+                               { 
+                                    ConsultaId = x.ConsultaId,
+                                    Medico = new Medico() 
+                                    { 
+                                        Nome = x.Medico.Nome,
+                                        Crm = x.Medico.Crm
+                                    },
+                                    Paciente = new Paciente()
+                                    {
+                                        Nome = x.Paciente.Nome,
+                                        DataNacimento = x.Paciente.DataNacimento,
+                                        Rg = x.Paciente.Rg
+                                    },
+                                    Situacao = new Situacao()
+                                    { 
+                                        NomeSituacao = x.Situacao.NomeSituacao
+                                    },
+                                    Descricao = x.Descricao,
+                                    DataConsulta = x.DataConsulta
+                               })
                                .ToList();
         }
     }

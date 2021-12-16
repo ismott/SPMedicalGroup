@@ -113,12 +113,12 @@ namespace SpMadicalGrup.Controllers
 
         [HttpPut("{id}")]
         //[Authorize (Roles = "2")]
-        public IActionResult Put(int id, string Descricao)
+        public IActionResult Put(int id, Consultum ConsultumAtualizado)
         {
             try
             {
                 // Faz a chamada para o método
-                _ConsultaRepository.Atualizar(id, Descricao);
+                _ConsultaRepository.Atualizar(id, ConsultumAtualizado);
 
                 // Retorna um status code
                 return StatusCode(204);
