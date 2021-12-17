@@ -7,8 +7,8 @@ export default class ListarMinhas extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Email: 'andrey.ad@hotmail.com.br',
-      Senha: '13245',
+      Email: 'ricardo.lemos@spmedicalgroup.com.br',
+      Senha: '12345',
       MesagenErro: '',
       isLoding: false
     };

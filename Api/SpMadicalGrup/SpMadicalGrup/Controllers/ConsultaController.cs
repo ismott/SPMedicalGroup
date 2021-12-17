@@ -111,9 +111,9 @@ namespace SpMadicalGrup.Controllers
         }
 
 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         //[Authorize (Roles = "2")]
-        public IActionResult Put(int id, Consultum ConsultumAtualizado)
+        public IActionResult Patch(int id, Consultum ConsultumAtualizado)
         {
             try
             {

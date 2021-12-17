@@ -43,7 +43,7 @@ export default class ListarMinhas extends Component {
     }
 
     ConsultaEditada = () => {
-        axios.put('http://localhost:5000/api/Consulta/' + this.state.id, {descricao : this.state.descricao},
+        axios.patch('http://localhost:5000/api/Consulta/' + this.state.id, {descricao : this.state.descricao},
         {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('UsuarioTk')
@@ -56,7 +56,7 @@ export default class ListarMinhas extends Component {
                     this.MinhaConsulta();
                 }
             })
-            .catch(erro => console.log(erro));
+            .catch(erro => console.log(erro), this.setState({editando : false}));
     }
 
     AtualizarCampo = (campo) => {

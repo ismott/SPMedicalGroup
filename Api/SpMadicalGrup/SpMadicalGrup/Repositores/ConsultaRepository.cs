@@ -84,6 +84,8 @@ namespace SpMadicalGrup.Repositores
                                .Select(x => new Consultum()
                                {
                                    ConsultaId = x.ConsultaId,
+                                   Descricao = x.Descricao,
+                                   DataConsulta = x.DataConsulta,
                                    Medico = new Medico()
                                    {
                                        Nome = x.Medico.Nome,
@@ -98,9 +100,7 @@ namespace SpMadicalGrup.Repositores
                                    Situacao = new Situacao()
                                    {
                                        NomeSituacao = x.Situacao.NomeSituacao
-                                   },
-                                   Descricao = x.Descricao,
-                                   DataConsulta = x.DataConsulta
+                                   }
                                })
                                .ToList(); ;
             }
@@ -113,6 +113,8 @@ namespace SpMadicalGrup.Repositores
                                .Select(x => new Consultum()
                                {
                                    ConsultaId = x.ConsultaId,
+                                   Descricao = x.Descricao,
+                                   DataConsulta = x.DataConsulta,
                                    Medico = new Medico()
                                    {
                                        Nome = x.Medico.Nome,
@@ -127,9 +129,7 @@ namespace SpMadicalGrup.Repositores
                                    Situacao = new Situacao()
                                    {
                                        NomeSituacao = x.Situacao.NomeSituacao
-                                   },
-                                   Descricao = x.Descricao,
-                                   DataConsulta = x.DataConsulta
+                                   }
                                })
                                .ToList(); ;
             }
