@@ -6,6 +6,7 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
+import { usuarioAutenticado } from './Services/auth';
 
 import './index.css';
 
@@ -15,13 +16,25 @@ import CadastroConsulta from './Pages/CadastroConsulta/CadastroConsulta';
 
 import reportWebVitals from './reportWebVitals';
 
+const Autenticado = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/" />
+      )
+    }
+  />
+);
+
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/ListarMinhas" component={ListarMinhas} />
-        <Route path="/CadastroConsulta" component={CadastroConsulta} />
+        <Autenticado path="/ListarMinhas" component={ListarMinhas} />
+        <Autenticado path="/CadastroConsulta" component={CadastroConsulta} />
       </Switch>
     </div>
   </Router>

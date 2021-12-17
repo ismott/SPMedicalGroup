@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.conteiner{
+    width: 98vw;
+    margin: 0;
+}
+
+.contHeder{
+    display: flex;
+    justify-content: space-around;
+}
+
+.LinkHeder_cont{
+    width: 23%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.LinkHeder{
+    font-family: open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+}

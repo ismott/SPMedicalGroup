@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { parseJwt, usuarioAutenticado } from '../../Services/auth';
+import Header from '../../Components/Header/Header';
 import axios from 'axios';
+
 
 export default class ListarMinhas extends Component {
     constructor(props) {
@@ -75,6 +77,7 @@ export default class ListarMinhas extends Component {
     render() {
         return (
             <div>
+                <Header/>
                 <main>
                     <section>
                         <h2>Minhas Consultas</h2>

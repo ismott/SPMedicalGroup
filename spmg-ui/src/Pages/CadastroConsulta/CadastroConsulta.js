@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from 'axios';
+import Header from '../../Components/Header/Header';
 
 export default class ListarMinhas extends Component {
     constructor(props) {
@@ -52,6 +53,7 @@ export default class ListarMinhas extends Component {
     render() {
         return (
             <div>
+                <Header/>
                 <h2>Cadastro de consulta</h2>
                 <form onSubmit={this.CadastrarEvento}>
                     <input
