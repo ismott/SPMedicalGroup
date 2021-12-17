@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from "react";
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 export default class ListarMinhas extends Component {
   constructor(props) {
@@ -28,6 +28,7 @@ export default class ListarMinhas extends Component {
         if (resposta.status === 200) {
           localStorage.setItem('UsuarioTk', resposta.data.token);
           this.setState({isLoding : false});
+          this.props.history.push('/ListarMinhas');
         }
       })
 
@@ -54,7 +55,7 @@ export default class ListarMinhas extends Component {
               <input type="email" name="Email" value={this.state.Email} onChange={this.AtualizarCampo} placeholder="Email" />
               <input type="password" name="Senha" value={this.state.Senha} onChange={this.AtualizarCampo} placeholder="Senha" />
               <p style={{color : 'red'}}>{this.state.MesagenErro}</p>
-              {this.state.isLoding? <button type="submit" disabled>Carregando...</button> : <button type="submit">Logar</button>}
+              {this.state.isLoding? <button type="submit" disabled>Carregando...</button> :  <button type="submit">Logar</button>}
             </form>
           </section>
         </main>

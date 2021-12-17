@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, BrowserRouter as Router, Redirect, Routes} from 'react-router-dom';
+import {
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 
 import './index.css';
 
@@ -13,20 +18,22 @@ import reportWebVitals from './reportWebVitals';
 const routing = (
   <Router>
     <div>
-      <Routes>
+      <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/listarminhas" component={ListarMinhas} />
+        <Route path="/ListarMinhas" component={ListarMinhas} />
         <Route path="/CadastroConsulta" component={CadastroConsulta} />
-      </Routes>
+      </Switch>
     </div>
   </Router>
 );
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ListarMinhas/>
-  </React.StrictMode>,
-  document.getElementById('root'));
+ReactDOM.render(routing, document.getElementById('root'));
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Home/>
+//   </React.StrictMode>,
+//   document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
