@@ -32,7 +32,7 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={ListarMinhas} />
         <Autenticado path="/ListarMinhas" component={ListarMinhas} />
         <Autenticado path="/CadastroConsulta" component={CadastroConsulta} />
       </Switch>

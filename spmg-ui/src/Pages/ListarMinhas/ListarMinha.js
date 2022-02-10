@@ -30,7 +30,7 @@ export default class ListarMinhas extends Component {
                 .catch(erro => console.log(erro));
         }
         else{
-            axios('http://localhost:5000/api/Consulta/minhas', {
+            axios('https://62055ceb161670001741ba2a.mockapi.io/Consulta', {
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('UsuarioTk')
                 }
@@ -95,10 +95,11 @@ export default class ListarMinhas extends Component {
                                 {
                                     this.state.ListarConsulta.map((Consulta) => {
                                         return (
-                                            <tr key={Consulta.consultaId}>
-                                                <td>{Consulta.paciente.nome}</td>
-                                                <td>{Consulta.medico.nome}</td>
-                                                <td>{Consulta.dataConsulta}</td>
+                                            <tr key={Consulta.id}>
+                                                <td>{Consulta.DataConsulta}</td>
+                                                <td>{Consulta.idMadicoNaviGate.Nome}</td>
+                                                <td>{Consulta.idPacienteNaviGate.Nome}</td>
+                                                <td>{Consulta.Descricao}</td>
                                                 {this.state.editando == true && this.state.id === Consulta.consultaId ? <td><input type="text" name="descricao" value={this.state.descricao} onChange={this.AtualizarCampo} placeholder="descrição" /></td> : <td>{Consulta.descricao}</td> }
                                                 {usuarioAutenticado() && parseJwt().role === '2'? this.state.editando == true && this.state.id === Consulta.consultaId ? <td><button onClick={() => this.ConsultaEditada()}>Concluir</button></td> : <td><button onClick={() => this.BuscarConsulta(Consulta)}>Editar</button></td> : null}
                                             </tr>
